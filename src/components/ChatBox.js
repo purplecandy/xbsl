@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-  TextField,
-  makeStyles,
-  IconButton,
-  ListItemText,
-  ListItem,
-  Card,
-  Paper
-} from "@material-ui/core";
+import { TextField, makeStyles, IconButton, Paper } from "@material-ui/core";
 import { Send, AttachFile } from "@material-ui/icons";
 import { grey } from "@material-ui/core/colors";
-// import { chatMessages, chats } from "../mock";
 import { formatDate } from "../utils";
 
 const useStyles = makeStyles((theme) => ({

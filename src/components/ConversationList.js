@@ -6,7 +6,6 @@ import {
   makeStyles,
   Paper
 } from "@material-ui/core";
-import { chats } from "../mock";
 const useStyles = makeStyles((theme) => ({
   conversations: {
     padding: theme.spacing(1)
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ConversationList(props) {
-  const { onSelect } = props;
+  const { onSelect, conversations } = props;
   const classes = useStyles();
   const [active, setActive] = useState(0);
   const handleOnSelect = (converation, index) => {
@@ -44,7 +43,7 @@ export default function ConversationList(props) {
   return (
     <div>
       <Paper className={classes.conversations}>
-        {chats.data.conversations.map((e, i) => (
+        {conversations.map((e, i) => (
           <Card
             key={i}
             className={classes.conversationTile}

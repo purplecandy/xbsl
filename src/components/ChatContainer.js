@@ -1,18 +1,6 @@
 import React, { useState } from "react";
-import {
-  Grid,
-  Paper,
-  makeStyles,
-  Avatar,
-  Typography,
-  Container,
-  Card,
-  CardContent,
-  CardMedia,
-  TextField
-} from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import { chats, chatMessages } from "../mock";
-import { Height } from "@material-ui/icons";
 import ChatBox from "./ChatBox";
 import ConversationList from "./ConversationList";
 
@@ -36,7 +24,10 @@ export default function ChatContainer() {
     <div className={classes.chatContainer}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4}>
-          <ConversationList onSelect={handleConversation} />
+          <ConversationList
+            onSelect={handleConversation}
+            conversations={chats.data.conversations}
+          />
         </Grid>
         <Grid item xs={12} sm={8}>
           <ChatBox
